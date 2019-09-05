@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>EuAluno</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+            <a class="navbar-brand" href="#">EuAlunoFatec</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meus-dados.html">Meus dados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="materias.html">Matérias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="configuracoes.html">Configurações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <h4 class="display-5 mb-4">Próximas tarefas</h4>
+
+            <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Nova
+            </button>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body mb-3">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Matéria</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Selecione</option>
+                            <option>Engenharia 2</option>
+                            <option>Cálculo</option>
+                            <option>Estrutura de dados</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Tarefa</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Data de entrega</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="__/__/____">
+                    </div>
+
+                    <a href="#" class="btn btn-primary">Salvar</a>
+
+                </div>
+            </div>
+
+
+
+            <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <b>
+                        Estrutura de dados
+                    </b>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Exercícios aula 3
+                    </p>
+                    <hr>
+                    <p><b>Entrega</b> <br> 26/09/2019 - Quinta - <span class="text-danger">Faltam 2 dias</span></p>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <a href="#" class="btn btn-danger">Apagar</a>
+                        <a href="#" class="btn btn-success">Feito</a>
+                        <a href="#" class="btn btn-primary">Entregue</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <b>
+                        Engenharia 2
+                    </b>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Exercícios aula 4
+                    </p>
+                    <hr>
+                    <p><b>Entrega</b> <br> 26/09/2019 - Segunda - <span class="text-warning">Faltam 5 dias</span></p>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <a href="#" class="btn btn-danger">Apagar</a>
+                        <a href="#" class="btn btn-success">Feito</a>
+                        <a href="#" class="btn btn-primary">Entregue</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <b>
+                        Cálculo
+                    </b>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Lista de exercicíos 1º bimestre
+                    </p>
+                    <hr>
+                    <p><b>Entrega</b> <br> 27/09/2019 - Sexta - <span class="text-success">Faltam 7 dias</span></p>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <a href="#" class="btn btn-danger">Apagar</a>
+                        <a href="#" class="btn btn-success">Feito</a>
+                        <a href="#" class="btn btn-primary">Entregue</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
