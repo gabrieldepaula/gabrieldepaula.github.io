@@ -9,6 +9,22 @@
         <title>EuAluno</title>
     </head>
     <body id="page-index">
+
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <img src="https://via.placeholder.com/50" class="rounded float-left mr-2" alt="User picture">
+            <h4 class="alert-heading" style="height: 50px;vertical-align: middle;display: table-cell;">Amigo 7 enviou para todos do grupo...</h4>
+            <br>
+            <p><b>Matéria: </b> <br> Cálculo</p>
+            <p><b>Descrição: </b> <br> A história do cálculo e suas origens.</p>
+            <p><b>Data de entrega: </b> <br> 19/10/2019</p>
+            <label for="customRange3">Dificuldade</label>
+            <input type="range" class="custom-range" min="1" max="100" id="customRange3">
+
+            <hr>
+            <button class="btn btn-danger" data-dismiss="alert"><i class="fas fa-times"></i> Recusar</button>
+            <button class="btn btn-success" data-dismiss="alert"><i class="fas fa-check"></i> Aceitar</button>
+        </div>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
             <a class="navbar-brand" href="#">EuAlunoFatec</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +37,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meus-dados.html">Meus dados</a>
+                        <a class="nav-link" href="amigos.html">Amigos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="materias.html">Matérias</a>
@@ -57,13 +73,53 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Tarefa</label>
+                        <label for="exampleFormControlSelect1">Tipo</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Selecione</option>
+                            <option>Prova</option>
+                            <option>Trabalho individual</option>
+                            <option>Trabalho em grupo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Descrição</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Data de entrega</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="__/__/____">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="__/__/____">
+                    </div>
+
+                    <label for="customRange3">Dificuldade</label>
+                    <input type="range" class="custom-range" min="1" max="100" id="customRange3">
+
+                    <div class="form-group row">
+                        <div class="col-sm-2">Enviar para</div>
+                        <div class="col-sm-10">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">Todos da matéria</label>
+                            </div>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch2" disabled>
+                                <label class="custom-control-label" for="customSwitch2">Amigos da matéria</label>
+                            </div>
+
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Todos da matéria
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Amigos da matéria
+                                </label>
+                            </div> -->
+                        </div>
                     </div>
 
                     <button type="button" class="btn btn-primary"><i class="fas fa-save"></i> Salvar</button>
