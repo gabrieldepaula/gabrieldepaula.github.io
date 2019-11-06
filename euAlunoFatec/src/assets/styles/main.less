@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+@import 'vendor/_normalize';
+
+@import 'vendor/_slick';
+
+@import '_variables';
+@import '_reset';
+@import '_fonts';
+@import '_mixins';
+@import '_objects';
+
+@import (less, optional) '../../.tmp/jpg-sprite.css';
+@import (less, optional) '../../.tmp/png-sprite.css';
+
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    @import (less, optional) '../../.tmp/jpg-sprite@2x.css';
+    @import (less, optional) '../../.tmp/png-sprite@2x.css';
+}
+
+a[href="#goToContent"] {
+    .only-listen;
+}
+
+[class^=svg-] {
+    display: inline-block;
+    vertical-align: middle;
+    fill: orange; // REMOVER
+
+    svg, use {
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+    }
+}
+
+// [data-ani-type]:not([data-ani-type="sm-parallax"]) {
+//    visibility: hidden;
+
+//    &[data-animated="true"] {
+//        visibility: visible;
+//    }
+
+//    @media (max-width: 1023px) {
+//        visibility: visible;
+//    }
+// }
+
+select::-ms-expand {
+    display: none;
+}
+
+// Type your css for pages here
+
+
+
+// media queries
+
+@media screen {
+    @media (max-width: 767px) {
+
+    }
+}

@@ -1,0 +1,94 @@
+// Mixins
+#m {
+    .group() {
+        zoom: 1;
+
+        &:after,
+        &:before {
+            content: '';
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+
+    .rmvtxt_destroy(){
+        text-indent: 0;
+        overflow: visible;
+        display: block;
+    }
+
+    .bg-image(@url, @w: inherit, @h: inherit) {
+        &:extend(.rmvtxt);
+
+        width: @w;
+        height: @h;
+        background: url(@url) no-repeat;
+    }
+
+    .bg(@url, @size) {
+        background: url(@url) no-repeat top center;
+        -webkit-background-size: @size;
+                background-size: @size;
+    }
+
+    .opacity(@allBrowsers) {
+        @IE: @allBrowsers * 100;
+        opacity: @allBrowsers;
+        filter: alpha(opacity= @IE);
+    }
+
+    .font-face (@family, @fileName, @weight: normal, @style: normal) {
+        @font-face {
+            font-family: @family;
+            src: url('@{path-font}/@{fileName}.woff2') format('woff2'),
+                 url('@{path-font}/@{fileName}.woff') format('woff');
+            font-weight: @weight;
+            font-style: @style;
+            font-display: auto;
+        }
+    }
+
+    // .center() {
+    //     margin: 0 auto;
+    // }
+
+    // .box-sizing(@model: content-box) {
+    //     -webkit-box-sizing: @arguments;
+    //     -moz-box-sizing: @arguments;
+    //     -ms-box-sizing: @arguments;
+    //     -o-box-sizing: @arguments;
+    //     box-sizing: @arguments;
+    // }
+
+    // .appearance(@status: none)  {
+    //     -webkit-appearance: @status;
+    //     -moz-appearance: @status;
+    //     -ms-appearance: @status;
+    //     appearance: @status;
+    // }
+
+    // .border-radius(@r) {
+    //     border-radius: @r;
+    //     behavior: url(../border-radius.htc);
+    // }
+
+    // .box-shadow(@x, @y, @blur, @color, @alpha) {
+    //     -webkit-box-shadow: @x @y @blur rgba(red(@color), green(@color), blue(@color), @alpha);;
+    //     box-shadow: @x @y @blur rgba(red(@color), green(@color), blue(@color), @alpha);
+    // }
+
+    // .box-shadow-inset(@x, @y, @blur, @color, @alpha) {
+    //     -webkit-box-shadow: inset @x @y @blur rgba(red(@color), green(@color), blue(@color), @alpha);;
+    //     box-shadow: inset @x @y @blur rgba(red(@color), green(@color), blue(@color), @alpha);
+    // }
+}
+
+
+// Extends
+.rmvtxt {
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <base href="{{ base }}">
+    <link rel="canonical" href="{{ canonical }}">
+
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ base }}">
+    <meta property="og:title" content="{{ share.title }}">
+    <meta property="og:description" content="{{ share.description }}">
+    <meta property="og:image" content="{{ base }}{{ share.image }}?{{ cacheId }}">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ share.title }}">
+    <meta name="twitter:description" content="{{ share.description }}">
+    <meta name="twitter:image" content="{{ base }}{{ share.image }}?{{ cacheId }}">
+
+    <meta itemprop="name" content="{{ share.title }}">
+    <meta itemprop="description" content="{{ share.description }}">
+    <meta itemprop="image" content="{{ base }}{{ share.image }}?{{ cacheId }}">
+
+    <meta name="theme-color" content="{{ theme.foreground }}">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    {% if traking.UA %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ traking.UA }}"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ traking.UA }}');
+    </script>
+    {% endif %}
+
+    <!-- styles -->
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            background-color: {{ theme.background }};
+        }
+
+        .preloader__bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .preloader__bar__progress {
+            width: 0;
+            height: 100%;
+            background-color: {{ theme.foreground }};
+        }
+    </style>
+</head>
+<body id="{{ pageId }}">
+    <div class="svg-icon-lib">
+        {% include ".tmp/sprite.svg" ignore missing %}
+    </div>
+
+    <div class="preloader">
+        <div class="preloader__bar">
+            <div class="preloader__bar__progress"></div>
+        </div>
+    </div>
+
+    <a href="#goToContent" tabindex="1">Ir para o conteúdo</a>
+
+    {% block header %}
+        {% component "header", tag="header" %}
+    {% endblock %}
+
+    {% block content %}
+    <main></main>
+    {% endblock %}
+
+    {% block footer %}
+        {% component "footer", tag="footer" %}
+    {% endblock %}
+
+    <noscript id="deferred-styles">
+        <link rel="stylesheet" type="text/css" href="{{ base }}assets/styles/main.min.css?{{ cacheId }}"/>
+    </noscript>
+
+    <script>
+        var loadDeferredStyles = function() {
+            var addStylesNode = document.getElementById('deferred-styles');
+            var replacement = document.createElement('div');
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement)
+            addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+
+        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
+    <!-- scripts -->
+    <script>
+        var base = '{{ base }}';
+    </script>
+    <script src="assets/scripts/main.min.js?{{ cacheId }}"></script>
+
+</body>
+</html>
