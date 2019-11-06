@@ -13,6 +13,7 @@ const ComponentExtension = require('nunjucks-luego-component-extension');
 const GetData            = require('luego-get-data');
 const rimraf             = require('rimraf');
 const browserSync        = require('browser-sync');
+const sass               = require('gulp-sass');
 const reload             = browserSync.reload;
 
 const fs                 = require('fs');
@@ -39,6 +40,8 @@ const paths = {
             `${dir.src}/assets/scripts/vendor/jquery/jquery-3.4.1.js`,
             `${dir.src}/assets/scripts/vendor/jquery/jquery.waitforimages.js`,
             // `${dir.src}/assets/scripts/vendor/jquery/slick.min.js`,
+
+            // `${dir.src}/assets/scripts/vendor/adminlte/adminlte.js`,
 
             `${dir.src}/assets/scripts/vendor/greensock-js/TweenLite.js`,
             `${dir.src}/assets/scripts/vendor/greensock-js/easing/EasePack.js`,
@@ -83,8 +86,8 @@ const paths = {
             ],
         },
         styles: [
-            `${dir.src}/assets/styles/main.less`,
-            `${dir.src}/${dir.components}/**/*.less`,
+            `${dir.src}/assets/styles/main.scss`,
+            `${dir.src}/${dir.components}/**/*.scss`,
         ],
         html: [
             `${dir.src}/${dir.pages}/**/*.html`,
@@ -117,7 +120,7 @@ const paths = {
         images: `${dir.src}/assets/images/**/*`,
         styles: [
             `${dir.src}/assets/styles/**/*`,
-            `${dir.src}/${dir.components}/**/*.{css,less}`,
+            `${dir.src}/${dir.components}/**/*.{css,scss}`,
         ],
         html: [
             `${dir.src}/${dir.pages}/**/*.html`,
@@ -228,16 +231,21 @@ const buildScripts = function buildScripts() {
 
 const buildStyles = function buildStyles() {
     return gulp.src(paths.src.styles)
-        .pipe($.plumber())
-        .pipe($.luegoComponentStyles())
-        .pipe($.if(!isProduction, $.sourcemaps.init()))
         .pipe($.concat('main.min.css'))
-        .pipe($.less({ paths: [path.dirname(paths.src.styles[0])] }))
-        .pipe($.postcss([rucksack, autoprefixer, cssnano({ safe: true })]))
-        .pipe($.if(!isProduction, $.sourcemaps.write('.')))
-        .pipe($.plumber.stop())
-        .pipe($.size({ title: 'styles' }))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest(paths.dest.styles));
+
+    // return gulp.src(paths.src.styles)
+    //     .pipe($.plumber())
+    //     .pipe($.luegoComponentStyles())
+    //     .pipe($.if(!isProduction, $.sourcemaps.init()))
+    //     .pipe($.concat('main.min.css'))
+    //     .pipe($.less({ paths: [path.dirname(paths.src.styles[0])] }))
+    //     .pipe($.postcss([rucksack, autoprefixer, cssnano({ safe: true })]))
+    //     .pipe($.if(!isProduction, $.sourcemaps.write('.')))
+    //     .pipe($.plumber.stop())
+    //     .pipe($.size({ title: 'styles' }))
+    //     .pipe(gulp.dest(paths.dest.styles));
 };
 
 const buildImagesSprites = function buildImagesSprites() {
