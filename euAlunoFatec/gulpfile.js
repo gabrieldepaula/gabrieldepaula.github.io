@@ -405,6 +405,6 @@ const build = gulp.series('build:clear', gulp.parallel('build:images', 'build:co
 gulp.task('build', build);
 
 const watch = gulp.series('build', 'watch');
-gulp.task('serve:build', watch);
+gulp.task('serve', watch);
 
 gulp.task('default', build);
