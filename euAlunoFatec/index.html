@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="assets/styles.css">
+        <title>EuAluno</title>
+    </head>
+    <body id="page-index">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+            <a class="navbar-brand" href="#">EuAlunoFatec</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="amigos.html">Amigos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="materias.html">Matérias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="configuracoes.html">Configurações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <div class="container-fluid">
+
+        <div class="alert alert-info" role="alert">
+            <img src="https://via.placeholder.com/50" class="rounded float-left mr-2" alt="User picture">
+            <h4 class="alert-heading" style="height: 50px;vertical-align: middle;display: table-cell;">Amigo 7 enviou para todos do grupo...</h4>
+            <br>
+            <p><b>Matéria: </b> <br> Cálculo</p>
+            <p><b>Descrição: </b> <br> A história do cálculo e suas origens.</p>
+            <p><b>Data de entrega: </b> <br> 19/10/2019</p>
+            <label for="customRange3">Dificuldade</label>
+            <input type="range" class="custom-range" min="1" max="100" id="customRange3">
+
+            <hr>
+
+            <div class="float-right">
+                <button class="btn btn-danger" data-dismiss="alert"><i class="fas fa-times"></i> Recusar</button>
+                <button class="btn btn-success" data-dismiss="alert"><i class="fas fa-check"></i> Aceitar</button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+            <h4 class="display-5 mb-4">Próximas tarefas</h4>
+
+            <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fas fa-plus"></i> Nova
+            </button>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body mb-3">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Matéria</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Selecione</option>
+                            <option>Engenharia 2</option>
+                            <option>Cálculo</option>
+                            <option>Estrutura de dados</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Tipo</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Selecione</option>
+                            <option>Prova</option>
+                            <option>Trabalho individual</option>
+                            <option>Trabalho em grupo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Descrição</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Data de entrega</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="__/__/____">
+                    </div>
+
+                    <label for="customRange3">Dificuldade</label>
+                    <input type="range" class="custom-range" min="1" max="100" id="customRange3">
+
+                    <div class="form-group row">
+                        <div class="col-sm-2">Enviar para</div>
+                        <div class="col-sm-10">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">Todos da matéria</label>
+                            </div>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch2" disabled>
+                                <label class="custom-control-label" for="customSwitch2">Amigos da matéria</label>
+                            </div>
+
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Todos da matéria
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Amigos da matéria
+                                </label>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary"><i class="fas fa-save"></i> Salvar</button>
+
+                </div>
+            </div>
+
+
+
+            <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <b>Estrutura de dados</b>
+                    <button type="button" class="btn-sm btn-danger float-right"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Exercícios aula 3
+                    </p>
+                    <hr>
+                    <p><b>Entrega</b> <br> 26/09/2019 - Quinta - <span class="text-danger">Faltam 2 dias</span></p>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <button type="button" class="btn btn-success"><i class="fas fa-check"></i> Feito</button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-check-double"></i> Entregue</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <b>Engenharia 2</b>
+                    <button type="button" class="btn-sm btn-danger float-right"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Exercícios aula 4
+                    </p>
+                    <hr>
+                    <p><b>Entrega</b> <br> 26/09/2019 - Segunda - <span class="text-warning">Faltam 5 dias</span></p>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <button type="button" class="btn btn-success"><i class="fas fa-check"></i> Feito</button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-check-double"></i> Entregue</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-light mb-3">
+                <div class="card-header">
+                    <b>Cálculo</b>
+                    <button type="button" class="btn-sm btn-danger float-right"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Lista de exercicíos 1º bimestre
+                    </p>
+                    <hr>
+                    <p><b>Entrega</b> <br> 27/09/2019 - Sexta - <span class="text-success">Faltam 7 dias</span></p>
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <button type="button" class="btn btn-success"><i class="fas fa-check"></i> Feito</button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-check-double"></i> Entregue</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div class="bg-dark text-white p-3 mt-5 position-absolute" style="width:100%; bottom: 0;">
+            App EuAlunoFatec @ 2019
+        </div> -->
+
+        <footer class="footer bg-dark text-white">
+            <div class="container-fluid">
+            <span class="text-muted">App EuAlunoFatec @ 2019</span>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
