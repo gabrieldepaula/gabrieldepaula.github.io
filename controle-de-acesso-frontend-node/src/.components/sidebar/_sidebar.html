@@ -8,25 +8,25 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="/" class="nav-link {{ "active" if pageId == "index" else "" }}">
+                    <a href="{{ data.base }}/index.html" class="nav-link {{ "active" if pageId == "index" else "" }}">
                         <i class="nav-icon fas fa-book"></i><p>Controle de acesso</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/moradores/" class="nav-link {{ "active" if pageId == "moradores_index" or pageId == "moradores_salvar_index" else "" }}">
+                    <a href="{{ data.base }}/moradores/index.html" class="nav-link {{ "active" if pageId == "moradores_index" or pageId == "moradores_salvar_index" else "" }}">
                         <i class="nav-icon fas fa-house-user"></i><p>Moradores</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/visitantes/" class="nav-link {{ "active" if pageId == "visitantes_index" or pageId == "visitantes_salvar_index" else "" }}">
+                    <a href="{{ data.base }}/visitantes/index.html" class="nav-link {{ "active" if pageId == "visitantes_index" or pageId == "visitantes_salvar_index" else "" }}">
                         <i class="nav-icon fas fa-id-card"></i><p>Visitantes</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/prestadores-de-servico/" class="nav-link {{ "active" if pageId == "prestadores-de-servico_index" or pageId == "prestadores-de-servico_salvar_index" else "" }}">
+                    <a href="{{ data.base }}/prestadores-de-servico/index.html" class="nav-link {{ "active" if pageId == "prestadores-de-servico_index" or pageId == "prestadores-de-servico_salvar_index" else "" }}">
                         <i class="nav-icon fas fa-id-badge"></i><p>Prestadores de serviço</p>
                     </a>
                 </li>

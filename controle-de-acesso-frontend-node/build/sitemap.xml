@@ -12,12 +12,7 @@
     </url>
     <url>
         <loc>https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/moradores/</loc>
-        <lastmod>2020-06-04T15:37:01.641Z</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/visitantes/</loc>
-        <lastmod>2020-06-04T14:28:45.025Z</lastmod>
+        <lastmod>2020-06-19T03:18:07.207Z</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
@@ -26,8 +21,8 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/visitantes/salvar/</loc>
-        <lastmod>2020-06-04T14:28:40.694Z</lastmod>
+        <loc>https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/visitantes/</loc>
+        <lastmod>2020-06-04T14:28:45.025Z</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
@@ -38,6 +33,11 @@
     <url>
         <loc>https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/prestadores-de-servico/salvar/</loc>
         <lastmod>2020-06-04T14:28:10.527Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/visitantes/salvar/</loc>
+        <lastmod>2020-06-04T14:28:40.694Z</lastmod>
         <priority>1.0</priority>
     </url>
 </urlset>
