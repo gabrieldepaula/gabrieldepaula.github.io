@@ -1,8 +1,9 @@
 module.exports = {
-    base: 'https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/',
-    assets: './assets',
 
+    base: '/',
     base_api: 'https://gl-controle-de-acesso.herokuapp.com/',
+
+    assets: './assets',
 
     title: 'Boilerplate Luego',
     description: '',

@@ -4,7 +4,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp serve:build",
-    "hom": "gulp build --env=hom && git hadouken 'Publicando no Luego Labs'",
+    "hom": "gulp build --env=hom && git hadouken 'Publicando no GitHub'",
     "prod": "gulp build --env=prod"
   },
   "repository": {
