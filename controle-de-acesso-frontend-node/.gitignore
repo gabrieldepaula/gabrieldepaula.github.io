@@ -8,7 +8,6 @@ yarn.lock
 _AUX/*
 !.gitkeep
 
-**/*.map
 
 # OSX Files
 .DS_Store
