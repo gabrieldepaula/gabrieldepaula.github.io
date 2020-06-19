@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/',
+    base: 'https://gabrieldepaula.github.io/controle-de-acesso-frontend-node/build/',
     assets: './assets',
 
     base_api: 'http://127.0.0.1:8000/api/',
