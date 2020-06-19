@@ -1,0 +1,85 @@
+{% extends ".templates/_base.html" %}
+
+{% block content %}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Visitantes</h1>
+            </div>
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <a href="/visitantes/salvar/" class="btn btn-primary"><i class="fas fa-plus"></i> Novo</a>
+                        </h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Bloco</th>
+                                    <th>Apartamento</th>
+                                    <th>Cadastrado em:</th>
+                                    <th style="width: 40px">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Morador 1</td>
+                                    <td>123.123.123-45</td>
+                                    <td>1</td>
+                                    <td>45</td>
+                                    <td>29/05/2020 20:37</td>
+                                    <td style="width: 100px;">
+                                        <button class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</button>
+                                        <button class="btn btn-xs btn-block btn-danger"><i class="fas fa-times"></i> Apagar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Morador 2</td>
+                                    <td>123.123.123-45</td>
+                                    <td>2</td>
+                                    <td>32</td>
+                                    <td>29/05/2020 20:37</td>
+                                    <td>
+                                        <button class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</button>
+                                        <button class="btn btn-xs btn-block btn-danger"><i class="fas fa-times"></i> Apagar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Morador 3</td>
+                                    <td>123.123.123-45</td>
+                                    <td>1</td>
+                                    <td>15</td>
+                                    <td>29/05/2020 20:37</td>
+                                    <td>
+                                        <button class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</button>
+                                        <button class="btn btn-xs btn-block btn-danger"><i class="fas fa-times"></i> Apagar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

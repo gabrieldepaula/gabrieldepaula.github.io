@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ base }}assets/styles/main.min.css?{{ cacheId }}"/>
+</head>
+
+<body id="{{ pageId }}" class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        {% block header %}
+            {% component "header", tag="header" %}
+        {% endblock %}
+
+        {% block sidebar %}
+            {% component "sidebar", tag="sidebar" %}
+        {% endblock %}
+
+        <div class="content-wrapper">
+            {% block content %}
+                <main></main>
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+            {% component "footer", tag="footer" %}
+        {% endblock %}
+
+    </div>
+
+    <script>
+        var base = '{{ base }}';
+    </script>
+    <script src="{{ base }}assets/scripts/main.min.js?{{ cacheId }}"></script>
+
+    <!-- <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/adminlte/js/adminlte.min.js"></script>
+    <script src="vendor/adminlte/js/demo.js"></script> -->
+</body>
+</html>

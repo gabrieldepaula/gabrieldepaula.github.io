@@ -1,0 +1,32 @@
+.only-listen {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+    outline: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+}
+
+[data-player-type="vimeo"],
+[data-player-type="youtube"] {
+    position: relative;
+    height: 0;
+    padding-bottom: calc(100% / (16 / 9));
+    width: 100%;
+    margin: auto;
+
+    > div,
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+

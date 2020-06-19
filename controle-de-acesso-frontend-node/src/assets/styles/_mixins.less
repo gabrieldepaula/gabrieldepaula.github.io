@@ -1,0 +1,66 @@
+// Mixins
+#m {
+    .group() {
+        zoom: 1;
+
+        &:after,
+        &:before {
+            content: '';
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+
+    .rmvtxt_destroy(){
+        text-indent: 0;
+        overflow: visible;
+        display: block;
+    }
+
+    .bg-image(@url, @w: inherit, @h: inherit) {
+        &:extend(.rmvtxt);
+
+        width: @w;
+        height: @h;
+        background: url(@url) no-repeat;
+    }
+
+    .bg(@url, @size) {
+        background: url(@url) no-repeat top center;
+        -webkit-background-size: @size;
+                background-size: @size;
+    }
+
+    .opacity(@allBrowsers) {
+        @IE: @allBrowsers * 100;
+        opacity: @allBrowsers;
+        filter: alpha(opacity= @IE);
+    }
+
+    .font-face (@family, @fileName, @weight: normal, @style: normal) {
+        @font-face {
+            font-display: swap;
+            font-family: @family;
+            src: url('@{path-font}/@{fileName}.woff2') format('woff2'),
+                 url('@{path-font}/@{fileName}.woff') format('woff');
+            font-weight: @weight;
+            font-style: @style;
+        }
+    }
+
+    .circle(@dimension) {
+        width: @dimension;
+        height: @dimension;
+        border-radius: @dimension;
+    }
+}
+
+
+// Extends
+.rmvtxt {
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+}
