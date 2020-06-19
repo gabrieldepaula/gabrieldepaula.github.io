@@ -18,5 +18,15 @@ module.exports = {
     theme: {
         background: '#FFF',
         foreground: '#333',
-    }
+    },
+    actions: [
+        {
+            id: 5,
+            title: 'teste',
+        },
+        {
+            id: 6,
+            title: 'teste 2',
+        },
+    ],
 };
