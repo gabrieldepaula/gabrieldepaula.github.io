@@ -33,8 +33,7 @@ $el             = $(el);
 
 const $table = $el.find('#items-table');
 
-// $.get(`http://127.0.0.1:8000/api/${params.entity}/index`, function(items) {
-$.get('https://gl-controle-de-acesso.herokuapp.com/morador/pesquisar', function(items) {
+$.get(base_api + 'morador/pesquisar', function(items) {
     $table.find('tbody').html('');
     let $items = $(items);
     $items.each(function(itemIndex, item) {
@@ -50,8 +49,9 @@ $.get('https://gl-controle-de-acesso.herokuapp.com/morador/pesquisar', function(
                         <td>${item.bloco}</td>
                         <td>${item.apartamento}</td>
                         <td>${item.dataCadastro}</td>
-                        <td>
-                            <button type="button" class="btn btn-xs btn-warning"><i class="fas fa-edit"></i> Editar</button>
+                        <td style="width:100px;">
+                            <a href="${base}moradores/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
+                            <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Exluir</a>
                         </td>
                     </tr>
                 `;
@@ -67,6 +67,33 @@ $.get('https://gl-controle-de-acesso.herokuapp.com/morador/pesquisar', function(
         order: [[0, "desc"]],
         pageLength: 25,
     });
+});
+
+$(document).on('click', '[data-action]', function(e) {
+    e.preventDefault();
+    let $btn = $(this);
+    let action = $btn.attr('data-action');
+    let id = $btn.attr('data-id');
+
+    switch(action) {
+        case 'delete':
+            let confirm = window.confirm('Tem certeza que deseja apagar este morador?');
+
+            if(confirm) {
+                $.ajax({
+                    url: base_api + 'morador/apagar/?id=' + id,
+                    type: 'DELETE',
+                    success: function(response) {
+                        console.log(response);
+                    }
+                });
+            }
+        break;
+
+        default:
+            alert('Erro');
+        break;
+    }
 });
 
 // $table.DataTable({
