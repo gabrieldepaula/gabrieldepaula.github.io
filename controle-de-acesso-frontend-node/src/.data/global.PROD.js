@@ -5,10 +5,10 @@ module.exports = {
 
     assets: './assets',
 
-    title: 'Boilerplate Luego',
+    title: 'Controle de acesso',
     description: '',
     share: {
-        title: 'Boilerplate Luego',
+        title: 'Controle de acesso',
         description: '',
         image: ''
     },
