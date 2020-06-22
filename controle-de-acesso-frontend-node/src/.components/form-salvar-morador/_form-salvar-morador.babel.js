@@ -6,10 +6,3 @@
  */
 
 const $el = $(el);
-const $form = $el.find('form');
-
-$form.on('submit', function(e) {
-    e.preventDefault();
-
-    console.log($form.serialize());
-});

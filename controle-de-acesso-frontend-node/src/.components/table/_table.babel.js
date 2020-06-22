@@ -83,122 +83,20 @@ $(document).on('click', '[data-action]', function(e) {
                 $.ajax({
                     url: base_api + 'morador/apagar/?id=' + id,
                     type: 'DELETE',
-                    success: function(response) {
-                        console.log(response);
+                    success: function(response, textStatus, xhr) {
+                        if(textStatus == 'success') {
+                            alert('Morador excluído com sucesso.');
+                            window.location.href = window.location.href;
+                        } else {
+                            alert('Erro na requisição.');
+                        }
                     }
                 });
             }
         break;
 
         default:
-            alert('Erro');
+            alert('No action defined.');
         break;
     }
 });
-
-// $table.DataTable({
-//     // oLanguage : datatables_ptbr,
-//     // order: [[3, "asc"]],
-//     // pageLength: 25,
-//     ajax: {
-//         // url: base_url + '/cms/products/list',
-//         url: `http://127.0.0.1:8000/api/${params.entity}/index`,
-//     },
-//     columns:
-//     [
-//         // {
-//         //     data: 'status',
-//         //     name: 'status',
-//         //     title: '',
-//         //     searchable: false,
-//         //     orderable: true,
-//         //     width: '1%',
-//         //     class: 'status-column',
-//         // },
-//         {
-//             data: 'id',
-//             name: 'id',
-//             title: 'ID',
-//             width: '1%',
-//             searchable: true,
-//             orderable: true,
-//         },
-//         // {
-//         //     data: 'image_pack',
-//         //     name: 'image_pack',
-//         //     title: 'Embalagem',
-//         //     width: '1%',
-//         //     searchable: false,
-//         //     orderable: false,
-//         // },
-//         {
-//             data: 'name',
-//             name: 'name',
-//             title: 'Nome',
-//             searchable: true,
-//             orderable: true,
-//         },
-//         // {
-//         //     data: 'line',
-//         //     name: 'line',
-//         //     title: 'Linha(s)',
-//         //     searchable: true,
-//         //     orderable: true,
-//         // },
-//         // {
-//         //     data: 'category',
-//         //     name: 'category',
-//         //     title: 'Categoria',
-//         //     searchable: true,
-//         //     orderable: true,
-//         // },
-//         // {
-//         //     data: 'subcategory',
-//         //     name: 'subcategory',
-//         //     title: 'Sub Categoria',
-//         //     searchable: true,
-//         //     orderable: true,
-//         // },
-//         // {
-//         //     data: 'portals',
-//         //     name: 'portals',
-//         //     title: 'Portais',
-//         //     searchable: true,
-//         //     orderable: true,
-//         // },
-//         // {
-//         //     data: 'actions',
-//         //     name: 'actions',
-//         //     title: 'Ações',
-//         //     width: '1%',
-//         //     searchable: false,
-//         //     orderable: false,
-//         // },
-//     ]
-// });
-
-// $(document).on('click', '[data-action]', function(e) {
-//     e.preventDefault();
-//     var $btn = $(this);
-//     var html = $btn.html();
-//     var action = $btn.attr('data-action');
-//     var id = $btn.attr('data-id');
-
-//     if(action == 'delete') {
-//         var confirm = window.confirm('Deseja realmente apagar este produto?');
-//     }
-
-//     if(action != 'delete' || confirm) {
-
-//         $btn.html('<i class="fa fa-refresh fa-spin"></i>').attr('disabled', true);
-
-//         $.post(base_url + '/cms/products/actions', {action: action, id: id}, function(resp) {
-//             if(!resp.error) {
-//                 $table.ajax.reload();
-//             } else {
-//                 $btn.html(html).attr('disabled', false);
-//                 alert('Ocorreu um erro ao processar a requisição, por favor, tente novamente mais tarde.');
-//             }
-//         });
-//     }
-// });
