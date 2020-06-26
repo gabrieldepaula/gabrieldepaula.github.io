@@ -38,26 +38,20 @@ $.get(base_api + 'morador/pesquisar', function(items) {
     let $items = $(items);
     $items.each(function(itemIndex, item) {
         let item_html = '';
-        switch(params.entity) {
-
-            case 'moradores':
-                item_html = `
-                    <tr>
-                        <td>${item.id}</td>
-                        <td>${item.nome}</td>
-                        <td>${item.cpf}</td>
-                        <td>${item.bloco}</td>
-                        <td>${item.apartamento}</td>
-                        <td>${item.dataCadastro}</td>
-                        <td style="width:100px;">
-                            <a href="${base}moradores/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
-                            <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Exluir</a>
-                        </td>
-                    </tr>
-                `;
-            break;
-
-        }
+        item_html = `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.nome}</td>
+                <td>${item.cpf}</td>
+                <td>${item.bloco}</td>
+                <td>${item.apartamento}</td>
+                <td>${item.dataCadastro}</td>
+                <td style="width:100px;">
+                    <a href="${base}moradores/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
+                    <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Exluir</a>
+                </td>
+            </tr>
+        `;
 
         $table.find('tbody').append(item_html);
     });
