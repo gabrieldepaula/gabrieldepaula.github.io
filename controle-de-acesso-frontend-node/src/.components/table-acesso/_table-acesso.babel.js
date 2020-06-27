@@ -76,7 +76,7 @@ $.get(base_api + 'acesso/pesquisar', function(items) {
                 <td>${movimento}</td>
                 <td>${item.dataMovimento}</td>
                 <td style="width:100px;">
-                    <a href="${base}controle-de-acesso/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
+                    <a href="${base}acessos/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
                     <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Apagar</a>
                 </td>
             </tr>
