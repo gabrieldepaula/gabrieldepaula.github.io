@@ -101,8 +101,22 @@ $form.on('submit', function(e) {
             }
         break;
         case 'corretor':
+            if($corretor.val().length == 0) {
+                $corretor.addClass('is-invalid');
+                $corretor.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+                formValidated = false;
+            } else {
+                corretorId = $corretor.val();
+            }
         break;
         case 'entregador':
+            if($entregador.val().length == 0) {
+                $entregador.addClass('is-invalid');
+                $entregador.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+                formValidated = false;
+            } else {
+                entregadorId = $entregador.val();
+            }
         break;
         default:
         break;
@@ -113,6 +127,8 @@ $form.on('submit', function(e) {
         "morador":moradorId,
         "visitante":visitanteId,
         "prestadorServico":prestadorServicoId,
+        "corretor":corretorId,
+        "entregador":entregadorId,
         "movimento":$movimento.val()
     };
 

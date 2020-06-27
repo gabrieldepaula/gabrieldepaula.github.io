@@ -35,9 +35,8 @@ $selectTipo.on('change', function(e) {
     $el.find('.invalid-feedback').remove();
 
     if($selectTipo.val() != '') {
-        $('.select-tipo').find('select').val('');
+        $('.select-tipo').removeClass('d-block').addClass('d-none').find('select').val('');
         $('.tipo').removeClass('d-none').addClass('d-block');
-        $('.select-tipo').removeClass('d-block').addClass('d-none');
         $el.find('.select-'+$selectTipo.val()).removeClass('d-none').addClass('d-block');
     } else {
         $('.tipo, .select-tipo').removeClass('d-block').addClass('d-none');
