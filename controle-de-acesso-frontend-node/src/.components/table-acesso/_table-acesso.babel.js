@@ -57,6 +57,16 @@ $.get(base_api + 'acesso/pesquisar', function(items) {
             nome = item.prestadorServico.nome;
         }
 
+        if(item.corretor) {
+            tipo = 'Corretor';
+            nome = item.corretor.nome;
+        }
+
+        if(item.entregador) {
+            tipo = 'Entregador';
+            nome = item.entregador.nome;
+        }
+
         let item_html = '';
         item_html = `
             <tr>
