@@ -11,8 +11,8 @@ const entities = [
     'morador',
     'visitante',
     'prestadorservico',
-    // 'corretor',
-    // 'entregador',
+    'corretor',
+    'entregador',
 ];
 
 $.each(entities, function(index, entity) {
