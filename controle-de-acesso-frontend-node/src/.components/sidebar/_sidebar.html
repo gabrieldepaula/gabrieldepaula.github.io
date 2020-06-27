@@ -9,7 +9,7 @@
 
                 <li class="nav-item">
                     <a href="{{ base }}" class="nav-link {{ "active" if pageId == "index" or pageId == "controle-de-acesso_salvar_index" else "" }}">
-                        <i class="nav-icon fas fa-book"></i><p>Controle de acesso</p>
+                        <i class="nav-icon fas fa-book"></i><p>Acessos</p>
                     </a>
                 </li>
 
@@ -21,13 +21,25 @@
 
                 <li class="nav-item">
                     <a href="{{ base }}visitantes" class="nav-link {{ "active" if pageId == "visitantes_index" or pageId == "visitantes_salvar_index" else "" }}">
-                        <i class="nav-icon fas fa-id-card"></i><p>Visitantes</p>
+                        <i class="nav-icon fas fa-id-badge"></i><p>Visitantes</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ base }}prestadores-de-servico" class="nav-link {{ "active" if pageId == "prestadores-de-servico_index" or pageId == "prestadores-de-servico_salvar_index" else "" }}">
                         <i class="nav-icon fas fa-id-badge"></i><p>Prestadores de serviço</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ base }}corretores" class="nav-link {{ "active" if pageId == "corretores_index" or pageId == "corretores_salvar_index" else "" }}">
+                        <i class="nav-icon fas fa-id-badge"></i><p>Corretores</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ base }}entregadores" class="nav-link {{ "active" if pageId == "entregadores_index" or pageId == "entregadores_salvar_index" else "" }}">
+                        <i class="nav-icon fas fa-id-badge"></i><p>Entregadores</p>
                     </a>
                 </li>
 
