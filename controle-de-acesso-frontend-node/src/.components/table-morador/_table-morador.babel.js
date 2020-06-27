@@ -48,7 +48,7 @@ $.get(base_api + 'morador/pesquisar', function(items) {
                 <td>${item.dataCadastro}</td>
                 <td style="width:100px;">
                     <a href="${base}moradores/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
-                    <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Exluir</a>
+                    <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         `;
