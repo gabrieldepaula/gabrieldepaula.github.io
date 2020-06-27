@@ -1,20 +1,70 @@
 <form>
     <div class="card">
         <div class="card-body">
-            {# <div class="row">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" name="nome" class="form-control" disabled>
+                        <label>Movimento</label>
+                        <select name="movimento" class="form-control">
+                            <option value="">Selecione</option>
+                            <option value="E">Entrada</option>
+                            <option value="S">Saída</option>
+                        </select>
                     </div>
                 </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>CPF</label>
-                        <input type="text" name="cpf" class="form-control" disabled>
+                        <label>Tipo</label>
+                        <select name="tipo" class="form-control">
+                            <option value="">Selecione</option>
+                            <option value="morador">Morador</option>
+                            <option value="visitante">Visitante</option>
+                            <option value="prestadorservico">Prestador de serviço</option>
+                            <option value="corretor">Corretor</option>
+                            <option value="entregador">Entregador</option>
+                        </select>
                     </div>
                 </div>
-            </div> #}
+                <div class="col-md-6"></div>
+            </div>
+            <div class="row tipo d-none">
+                <div class="col-md-6">
+                    <div class="form-group select-tipo select-morador d-none">
+                        <label>Morador</label>
+                        <select name="morador" class="form-control">
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+                    <div class="form-group select-tipo select-visitante d-none">
+                        <label>Visitante</label>
+                        <select name="visitante" class="form-control">
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+                    <div class="form-group select-tipo select-prestadorservico d-none">
+                        <label>Prestador de serviço</label>
+                        <select name="prestadorservico" class="form-control">
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+                    <div class="form-group select-tipo select-corretor d-none">
+                        <label>Corretor</label>
+                        <select name="corretor" class="form-control">
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+                    <div class="form-group select-tipo select-entregador d-none">
+                        <label>Entregador</label>
+                        <select name="entregador" class="form-control">
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
         </div>
         <div class="card-footer">
             <div class="float-right">

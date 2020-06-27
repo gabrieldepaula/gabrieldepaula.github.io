@@ -34,69 +34,98 @@ if(id) {
 $form.on('submit', function(e) {
     e.preventDefault();
 
-    let $name    = $form.find('[name="nome"]');
-    let $cpf     = $form.find('[name="cpf"]');
-    let $ap      = $form.find('[name="apartamento"]');
-    let $bloco   = $form.find('[name="bloco"]');
+    let $movimento          = $form.find('[name="movimento"]');
+    let $tipo               = $form.find('[name="tipo"]');
+    let $morador            = $form.find('[name="morador"]');
+    let $visitante          = $form.find('[name="visitante"]');
+    let $prestadorServico   = $form.find('[name="prestadorservico"]');
+    let $corretor           = $form.find('[name="corretor"]');
+    let $entregador         = $form.find('[name="entregador"]');
 
-    // console.log(id);
-    // return;
+    let moradorId           = null;
+    let visitanteId         = null;
+    let prestadorServicoId  = null;
+    let corretorId          = null;
+    let entregadorId        = null;
+
     let $id;
 
     if(id) {
         $id = $form.find('[name="id"]');
     }
 
-    // console.log($id.val());
-
-    // return;
-
-    $form.find('input').removeClass('is-invalid');
+    $form.find('form-control').removeClass('is-invalid');
     $form.find('.invalid-feedback').remove();
 
     let formValidated = true;
 
-    if($name.val().length == 0) {
-        $name.addClass('is-invalid');
-        $name.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+    if($movimento.val().length == 0) {
+        $movimento.addClass('is-invalid');
+        $movimento.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
         formValidated = false;
     }
 
-    if($cpf.val().length == 0) {
-        $cpf.addClass('is-invalid');
-        $cpf.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+    if($tipo.val().length == 0) {
+        $tipo.addClass('is-invalid');
+        $tipo.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
         formValidated = false;
     }
 
-    if($ap.val().length == 0) {
-        $ap.addClass('is-invalid');
-        $ap.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
-        formValidated = false;
+
+    switch($tipo.val()) {
+        case 'morador':
+            if($morador.val().length == 0) {
+                $morador.addClass('is-invalid');
+                $morador.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+                formValidated = false;
+            } else {
+                moradorId = $morador.val();
+            }
+        break;
+        case 'visitante':
+            if($visitante.val().length == 0) {
+                $visitante.addClass('is-invalid');
+                $visitante.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+                formValidated = false;
+            } else {
+                visitanteId = $visitante.val();
+            }
+        break;
+        case 'prestadorservico':
+            if($prestadorServico.val().length == 0) {
+                $prestadorServico.addClass('is-invalid');
+                $prestadorServico.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
+                formValidated = false;
+            } else {
+                prestadorServicoId = $prestadorServico.val();
+            }
+        break;
+        case 'corretor':
+        break;
+        case 'entregador':
+        break;
+        default:
+        break;
     }
 
-    if($bloco.val().length == 0) {
-        $bloco.addClass('is-invalid');
-        $bloco.parents('.form-group').append('<p class="invalid-feedback">Este campo é obrigatório</p>');
-        formValidated = false;
-    }
+    let jsonData = {
+        "id":id ? $id.val() : null,
+        "morador":moradorId,
+        "visitante":visitanteId,
+        "prestadorServico":prestadorServicoId,
+        "movimento":$movimento.val()
+    };
 
     if(formValidated) {
         $.ajax({
-            url: base_api + 'morador/salvar',
+            url: base_api + 'acesso/salvar',
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json',
-            data: JSON.stringify({
-                "id":id ? $id.val() : null,
-                "nome":$name.val(),
-                "cpf":$cpf.val(),
-                "apartamento":$ap.val(),
-                "bloco":$bloco.val()
-            }),
-
+            data: JSON.stringify(jsonData),
             success: function() {
-                alert('Morador ' + (id ? 'atualizado' : 'cadastrado') + ' com sucesso.');
-                window.location.href = base + 'moradores/';
+                alert('Acesso ' + (id ? 'atualizado' : 'cadastrado') + ' com sucesso.');
+                window.location.href = base;
             },
 
             error: function() {

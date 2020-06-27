@@ -37,11 +37,34 @@ $.get(base_api + 'acesso/pesquisar', function(items) {
     $table.find('tbody').html('');
     let $items = $(items);
     $items.each(function(itemIndex, item) {
+
+        var tipo = '';
+        var nome = '';
+        var movimento = item.movimento == 'E' ? 'Entrada' : 'Saída';
+
+        if(item.morador) {
+            tipo = 'Morador';
+            nome = item.morador.nome;
+        }
+
+        if(item.visitante) {
+            tipo = 'Visitante';
+            nome = item.visitante.nome;
+        }
+
+        if(item.prestadorServico) {
+            tipo = 'Prestador de serviço';
+            nome = item.prestadorServico.nome;
+        }
+
         let item_html = '';
         item_html = `
             <tr>
                 <td>${item.id}</td>
-                <td>${item.dataCadastro}</td>
+                <td>${tipo}</td>
+                <td>${nome}</td>
+                <td>${movimento}</td>
+                <td>${item.dataMovimento}</td>
                 <td style="width:100px;">
                     <a href="${base}controle-de-acesso/salvar/?id=${item.id}" class="btn btn-xs btn-block btn-warning"><i class="fas fa-edit"></i> Editar</a>
                     <button type="button" class="btn btn-xs btn-block btn-danger" data-action="delete" data-id="${item.id}"><i class="fas fa-trash"></i> Exluir</a>
