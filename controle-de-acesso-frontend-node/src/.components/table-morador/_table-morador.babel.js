@@ -79,7 +79,7 @@ $(document).on('click', '[data-action]', function(e) {
                     type: 'DELETE',
                     success: function(response, textStatus, xhr) {
                         if(textStatus == 'success') {
-                            alert('Morador excluído com sucesso.');
+                            alert('Morador apagado com sucesso.');
                             window.location.href = window.location.href;
                         } else {
                             alert('Erro na requisição.');

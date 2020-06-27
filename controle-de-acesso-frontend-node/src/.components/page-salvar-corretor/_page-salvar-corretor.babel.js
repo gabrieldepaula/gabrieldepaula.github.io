@@ -35,17 +35,11 @@ $form.on('submit', function(e) {
     let $name    = $form.find('[name="nome"]');
     let $cpf     = $form.find('[name="cpf"]');
 
-    // console.log(id);
-    // return;
     let $id;
 
     if(id) {
         $id = $form.find('[name="id"]');
     }
-
-    // console.log($id.val());
-
-    // return;
 
     $form.find('input').removeClass('is-invalid');
     $form.find('.invalid-feedback').remove();

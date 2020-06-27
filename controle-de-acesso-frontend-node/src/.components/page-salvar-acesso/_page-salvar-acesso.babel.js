@@ -10,25 +10,55 @@ const $form = $el.find('form');
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
-
 if(id) {
-    $form.find('input').val('Carregando...');
-    $.get(base_api + 'morador/pesquisar', function(items) {
+
+    $.get(base_api + 'acesso/pesquisar', function(items) {
+
         let $items = $(items);
+
         $items.each(function(itemIndex, item) {
             if(id == item.id) {
-                $el.find('.page-title').text('Editar morador #' + id + ' - ' + item.nome);
-                $form.find('[name="nome"]').val(item.nome);
-                $form.find('[name="cpf"]').val(item.cpf);
-                $form.find('[name="apartamento"]').val(item.apartamento);
-                $form.find('[name="bloco"]').val(item.bloco);
+
+                $form.find('[name="movimento"]').val(item.movimento);
+
+                if(item.morador) {
+                    $('[name="tipo"]').val('morador');
+                    $('[name="morador"]').val(item.morador.id);
+                    $form.find('.tipo, .select-morador').removeClass('d-none').addClass('d-block');
+                }
+
+                if(item.visitante) {
+                    $('[name="tipo"]').val('visitante');
+                    $('[name="visitante"]').val(item.visitante.id);
+                    $form.find('.tipo, .select-visitante').removeClass('d-none').addClass('d-block');
+                }
+
+                if(item.prestadorServico) {
+                    $('[name="tipo"]').val('prestadorservico');
+                    $('[name="prestadorservico"]').val(item.prestadorServico.id);
+                    $form.find('.tipo, .select-prestadorservico').removeClass('d-none').addClass('d-block');
+                }
+
+                if(item.corretor) {
+                    $('[name="tipo"]').val('corretor');
+                    $('[name="corretor"]').val(item.corretor.id);
+                    $form.find('.tipo, .select-corretor').removeClass('d-none').addClass('d-block');
+                }
+
+                if(item.entregador) {
+                    $('[name="tipo"]').val('entregador');
+                    $('[name="entregador"]').val(item.entregador.id);
+                    $form.find('.tipo, .select-entregador').removeClass('d-none').addClass('d-block');
+                }
+
+                $el.find('.page-title').text('Editar acesso #' + id);
                 $form.prepend('<input type="hidden" name="id" value="'+item.id+'">');
-                $form.find('input').attr('disabled', false);
+                $form.find('select').attr('disabled', false);
             }
         });
     });
 } else {
-    $form.find('input').attr('disabled', false);
+    $form.find('select').attr('disabled', false);
 }
 
 $form.on('submit', function(e) {
@@ -119,6 +149,7 @@ $form.on('submit', function(e) {
             }
         break;
         default:
+            alert('Erro na requisição');
         break;
     }
 

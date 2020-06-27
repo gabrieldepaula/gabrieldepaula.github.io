@@ -77,7 +77,7 @@ $(document).on('click', '[data-action]', function(e) {
                     type: 'DELETE',
                     success: function(response, textStatus, xhr) {
                         if(textStatus == 'success') {
-                            alert('Entregador excluído com sucesso.');
+                            alert('Entregador apagado com sucesso.');
                             window.location.href = window.location.href;
                         } else {
                             alert('Erro na requisição.');
