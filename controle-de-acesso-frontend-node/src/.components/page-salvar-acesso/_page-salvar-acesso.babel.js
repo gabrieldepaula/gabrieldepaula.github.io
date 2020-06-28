@@ -149,7 +149,7 @@ $form.on('submit', function(e) {
             }
         break;
         default:
-            alert('Erro na requisição');
+            formValidated = false;
         break;
     }
 
