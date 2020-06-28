@@ -77,6 +77,7 @@ const paths = {
 
             `${dir.src}/assets/vendor/datatables/jquery.dataTables.min.js`,
             `${dir.src}/assets/vendor/datatables-bs4/js/dataTables.bootstrap4.min.js`,
+            `${dir.src}/assets/vendor/adminlte/js/adminlte.min.js`,
         ],
         images: {
             sprites: `${dir.src}/assets/images/sprites/*`,
