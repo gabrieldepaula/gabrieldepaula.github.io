@@ -153,17 +153,18 @@ $form.on('submit', function(e) {
         break;
     }
 
-    let jsonData = {
-        "id":id ? $id.val() : null,
-        "morador":moradorId,
-        "visitante":visitanteId,
-        "prestadorServico":prestadorServicoId,
-        "corretor":corretorId,
-        "entregador":entregadorId,
-        "movimento":$movimento.val()
-    };
-
     if(formValidated) {
+
+        let jsonData = {
+            "id":id ? $id.val() : null,
+            "morador":moradorId,
+            "visitante":visitanteId,
+            "prestadorServico":prestadorServicoId,
+            "corretor":corretorId,
+            "entregador":entregadorId,
+            "movimento":$movimento.val()
+        };
+
         $.ajax({
             url: base_api + 'acesso/salvar',
             type: 'POST',
@@ -174,7 +175,6 @@ $form.on('submit', function(e) {
                 alert('Acesso ' + (id ? 'atualizado' : 'cadastrado') + ' com sucesso.');
                 window.location.href = base;
             },
-
             error: function() {
                 alert('Erro na requisição.');
                 window.location.href = window.location.href;
